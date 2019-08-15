@@ -27,9 +27,9 @@ route.post('/', (req, res) => {
 })
 
 route.delete('/:id', (req, res) => {
-    console.log("We were right")
+    // console.log("We were right id : " + req.params.id)
     Tweet.destroy({
-        where: { id: parseInt(req.params.id) }
+        where: { id: req.params.id }
     })
 })
 

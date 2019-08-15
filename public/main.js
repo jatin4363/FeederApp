@@ -38,9 +38,11 @@ function deleteTweet(id_val, done) {
     // })
     console.log(id_val)
     $.ajax({
-        url: '/content/:' + id_val,
+        url: '/content/' + id_val,
         type: 'DELETE',
-        data: { _method: 'delete' }
+        data: { _method: 'delete' },
+        success : done()
+        
     })
 
     // $.post('/content/' + id_val, { _method: 'delete' })

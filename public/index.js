@@ -47,7 +47,7 @@ $(function () {
 
 
     $(document).on('click', '#remove-btn', (event) => {
-        console.log("btn clicked of id :" + $(event.target).parent().parent().attr('id'))
+        // console.log("btn clicked of id :" + $(event.target).parent().parent().attr('id'))
         deleteTweet($(event.target).parent().parent().attr('id'), () => {
             location.reload()
         })
