@@ -1,5 +1,5 @@
 $(function () {
-    console.log("we r in index.js in public")
+    // console.log("we r in index.js in public")
     let tweetlist = $('#tweet-list')
     fetchTweets(function (tweets) {
         tweetlist.empty()
@@ -14,38 +14,42 @@ $(function () {
     let auth = $('#author')
     let cont = $('#content')
 
-    // $('#add-btn').click(
-    //     console.log("eyeyeyey")
-    //     // addTweet(
-    //     //     auth.val(),
-    //     //     cont.val(),
-    //     //     function (TweeteAdded) {
-    //     //         window.alert(TweeteAdded + 'has been added to the db')
-    //     //     }
-    //     // )
-    //     // ,console.log("34562534eyeyeyey")
-    // )
-
-    $(document).on('click', '#add-btn', function () {
+    $('#add-btn').click(() => {
         addTweet(
             auth.val(),
             cont.val(),
             function () {
+                // window.alert(TweeteAdded + 'has been added to the db')
                 location.reload()
                 auth.val("")
                 cont.val("")
             }
         )
-    });
+    }
+    )
 
-    // let tweetlist = $('#tweet-list')
+    // $(document).on('click', '#add-btn', function () {
+    //     addTweet(
+    //         auth.val(),
+    //         cont.val(),
+    //         function () {
+    // location.reload()
+    // auth.val("")
+    // cont.val("")
+    //         }
+    //     )
+    // });
 
-    // fetchTweets(function(tweets){
-    //     tweetlist.empty()
-    //     for(tweet of tweets){
-    //         tweetlist.prepend(createTweetCard(tweet))
-    //     }
-    // })
+
+    // $('#remove-btn').click(() => 
+    //     console.log("clicked")
+    // ) does not work with dynamically added elements 
 
 
+    $(document).on('click', '#remove-btn', (event) => {
+        console.log("btn clicked of id :" + $(event.target).parent().parent().attr('id'))
+        deleteTweet($(event.target).parent().parent().attr('id'), () => {
+            location.reload()
+        })
+    })
 })

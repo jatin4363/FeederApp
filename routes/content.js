@@ -26,4 +26,11 @@ route.post('/', (req, res) => {
     }))
 })
 
+route.delete('/:id', (req, res) => {
+    console.log("We were right")
+    Tweet.destroy({
+        where: { id: parseInt(req.params.id) }
+    })
+})
+
 exports = module.exports = route
