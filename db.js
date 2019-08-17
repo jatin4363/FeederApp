@@ -48,7 +48,7 @@ const Users = db.define('users' , {
     },
     dob:{
         allowNull:false,
-        type:Sequelize.DATEONLY
+        type:Sequelize.STRING
     }
 })
 

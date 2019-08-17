@@ -22,69 +22,71 @@
 </head>
 
 <body>
-    <div class="container d-flex h-100">
-        <div class="card jumbotron align-self-center w-100">
-            <div class="card-body">
-                <h1 align='center'><b>Good To Have You</b></h1>
-                <div class="form-group row">
-                    <label class="col-sm-2 col-form-label">Name:</label>
-                    <div class="col-sm-10">
-                        <input type="text" id="firstname" placeholder="First Name">
-                        <input type="text" id="lastname" placeholder="Last Name">
-                    </div>
-                </div>
-
-                <div class="form-group row">
-                    <label class="col-sm-3 col-form-label">Gender:</label>
-                    <div class="col-sm-3">
-                        <label class="form-check-label">
-                            <input type="radio" class="form-check-input" name="optradio">Male
-                        </label>
-                    </div>
-                    <div class="col-sm-3">
-                        <label class="form-check-label">
-                            <input type="radio" class="form-check-input" name="optradio">Female
-                        </label>
-                    </div>
-                    <div class="col-sm-3">
-                        <label class="form-check-label">
-                            <input type="radio" class="form-check-input" name="optradio">Other
-                        </label>
-                    </div>
-                </div>
-
-                <div class="form-group row">
-                    <label class="col-sm-2">Date of Birth :</label>
-                    <div class="col-sm-10">
-                        <input type="date" id="dateofbirth">
+    <form method="POST" action="/signup">
+        <div class="container d-flex h-100">
+            <div class="card jumbotron align-self-center w-100">
+                <div class="card-body">
+                    <h1 align='center'><b>Good To Have You</b></h1>
+                    <div class="form-group row">
+                        <label class="col-sm-2 col-form-label">Name:</label>
+                        <div class="col-sm-10">
+                            <input type="text" id="firstname" name="firstname" placeholder="First Name">
+                            <input type="text" id="lastname" name="lastname" placeholder="Last Name">
+                        </div>
                     </div>
 
-                </div>
-
-
-                <div class="form-group row">
-                    <label class="col-sm-2 col-form-label">Username:</label>
-                    <div class="col-sm-10">
-                        <input type="text" class="form-control" id="username"
-                            placeholder="write your username here ...">
+                    <div class="form-group row">
+                        <label class="col-sm-3 col-form-label">Gender:</label>
+                        <div class="col-sm-3">
+                            <label class="form-check-label">
+                                <input type="radio" class="form-check-input" id="male" name="optradio">Male
+                            </label>
+                        </div>
+                        <div class="col-sm-3">
+                            <label class="form-check-label">
+                                <input type="radio" class="form-check-input" id="female" name="optradio">Female
+                            </label>
+                        </div>
+                        <div class="col-sm-3">
+                            <label class="form-check-label">
+                                <input type="radio" class="form-check-input" id="other" name="optradio">Other
+                            </label>
+                        </div>
                     </div>
-                </div>
 
-                <div class="form-group row">
-                    <label class="col-sm-2 col-form-label">Password:</label>
-                    <div class="col-sm-10">
-                        <input type="password" class="form-control" id="password"
-                            placeholder="write your passsword here ...">
+                    <div class="form-group row">
+                        <label class="col-sm-2">Date of Birth :</label>
+                        <div class="col-sm-10">
+                            <input type="date" id="dateofbirth" name="dateofbirth">
+                        </div>
+
                     </div>
-                </div>
 
-                <div>
-                    <button type="submit" class="btn btn-success form-control">Signup !</button>
+
+                    <div class="form-group row">
+                        <label class="col-sm-2 col-form-label">Username:</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="username" name="username"
+                                placeholder="write your username here ...">
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="col-sm-2 col-form-label">Password:</label>
+                        <div class="col-sm-10">
+                            <input type="password" class="form-control" id="password" name="password"
+                                placeholder="write your passsword here ...">
+                        </div>
+                    </div>
+
+                    <div>
+                        <button type="submit" class="btn btn-success form-control">Signup !</button>
+                    </div>
                 </div>
             </div>
-        </div>
 
-    </div>
+        </div>
+    </form>
 </body>
 
 </html>
