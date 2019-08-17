@@ -1,10 +1,19 @@
 const express = require('express')
+const session = require('express-session')
+const passport = require('./passport')
 const app = express()
 const path = require('path')
 
 
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
+
+app.use(session({
+    secret:'secretmessagehasbeenwrittenhere'
+}))
+
+app.use(passport.initialize())
+app.use(passport.session())
 
 app.use('/', express.static(path.join(__dirname, 'public')))
 

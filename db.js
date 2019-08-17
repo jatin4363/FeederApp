@@ -24,10 +24,38 @@ const Tweet = db.define('tweets', {
 
 })
 
+const Users = db.define('users' , {
+    username : {
+        type:Sequelize.STRING,
+        unique : true,
+        allowNull:false
+    },
+    password: {
+        type:Sequelize.STRING,
+        allowNull:false
+    },
+    fname:{
+        allowNull:false,
+        type:Sequelize.STRING
+    },
+    lname:{
+        allowNull:false,
+        type:Sequelize.STRING
+    },
+    gender:{
+        allowNull:false,
+        type:Sequelize.STRING
+    },
+    dob:{
+        allowNull:false,
+        type:Sequelize.DATEONLY
+    }
+})
+
 db.sync()
     .then(() => console.log("Database has been created"))
     .catch((err) => console.log('Error creating database'))
 
 exports = module.exports = {
-    Tweet
+    Tweet , Users
 }
