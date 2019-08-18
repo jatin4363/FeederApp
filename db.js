@@ -42,10 +42,6 @@ const Users = db.define('users' , {
         allowNull:false,
         type:Sequelize.STRING
     },
-    gender:{
-        allowNull:false,
-        type:Sequelize.STRING
-    },
     dob:{
         allowNull:false,
         type:Sequelize.STRING
