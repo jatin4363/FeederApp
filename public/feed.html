@@ -17,12 +17,19 @@
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
     <script src="jquery-3.4.1.js"></script>
+    <script src="root.js"></script>
     <script src="main.js"></script>
     <script src="feed.js"></script>
     <title>Document</title>
 </head>
 
 <body>
+    <nav class="navbar navbar-dark bg-dark sticky-top">
+        <a class="navbar-brand" href='#'>FeedApp</a>
+        <form class="form-inline">
+            <button class="btn btn-outline-success my-2 my-sm-0" id="logout-btn" type="submit">Logout</button>
+        </form>
+    </nav><br>
     <div class="container">
         <div class="form-group row">
             <label class="col-sm-2 col-form-label">Author:</label>

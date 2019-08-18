@@ -27,6 +27,12 @@ $(function () {
         )
     }
     )
+    $('#logout-btn').click(() => {
+        $.get('/logout', function (data) {
+            // console.log(data)
+            alert("You were successfully loggedout")
+        })
+    })
 
     // $(document).on('click', '#add-btn', function () {
     //     addTweet(

@@ -11,6 +11,11 @@ route.get('/signup', (req, res) => {
     res.sendFile(path.join(__dirname, '../public', 'signup.html'))
 })
 
+route.get('/logout', function (req, res) {
+    req.logout()
+    res.redirect('/')
+})
+
 route.post('/signin', passport.authenticate('local', {
     failureRedirect: '/signin',
     successRedirect: '/feed'
