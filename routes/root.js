@@ -13,7 +13,7 @@ route.get('/signup', (req, res) => {
 
 route.post('/signin', passport.authenticate('local', {
     failureRedirect: '/signin',
-    successRedirect: '/private'
+    successRedirect: '/feed'
 }))
 
 

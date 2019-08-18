@@ -53,5 +53,5 @@ db.sync()
     .catch((err) => console.log('Error creating database'))
 
 exports = module.exports = {
-    Tweet , Users
+    Tweet , Users , db
 }
