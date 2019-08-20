@@ -3,7 +3,8 @@ function createTweetCard(tweet) {
     return (`
     <div class="card" id ="${tweet.id}">
         <div class="card-body">
-            <h4 class="card-title" id="author">${tweet.author}</h4>
+            <h4 class="card-title" id="fullname">${tweet.fullname}</h4>
+            <a href="#" id="username">@${tweet.author}</a><br><br>
             <p class="card-text" id="content">${tweet.content}</p>
             <a href="#" class="card-link">Like</a>
             <a href="#" class="card-link">Dislike</a>
@@ -13,11 +14,11 @@ function createTweetCard(tweet) {
     `)
 }
 
-function addTweet(auth, cont, done) {
+function addTweet(cont, done) {
     // function to add the tweet in the database
     // from this function we send a post request that we added in routes/content.js
     $.post('/content', {
-        author: auth,
+        // author: auth,
         content: cont
     }, function (data) {
         done(data)
@@ -41,8 +42,8 @@ function deleteTweet(id_val, done) {
         url: '/content/' + id_val,
         type: 'DELETE',
         data: { _method: 'delete' },
-        success : done()
-        
+        success: done()
+
     })
 
     // $.post('/content/' + id_val, { _method: 'delete' })

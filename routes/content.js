@@ -1,5 +1,6 @@
 const route = require("express").Router()
 const Tweet = require("../db").Tweet
+// const Users = require("../db").Users
 
 route.get('/', (req, res) => {
     // sends an array of all tweets from database
@@ -16,8 +17,11 @@ route.get('/', (req, res) => {
 
 route.post('/', (req, res) => {
     // creates a new tweet and add in database
+    console.log(req.user)
+    // console.log(req.user.fname + " " + req.user.lname)
     Tweet.create({
-        author: req.body.author,
+        fullname: req.user.fname + " " + req.user.lname,
+        author: req.user.username,
         content: req.body.content
     }).then((tweet) => {
         res.status(201).send(tweet)

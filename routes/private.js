@@ -4,10 +4,11 @@ const path = require('path')
 route.get('/' , (req,res)=>{
     // res.sendFile(path.join(__dirname, '../public', 'feed.html'))
     if(req.user){
-        console.log('atleast we did this much when loggin')
+        // console.log(req.user)
+        // console.log("Full Name : " + req.user.fname +" "+ req.user.lname )
+        // console.log("Username : " + req.user.username)
         res.sendFile(path.join(__dirname, '../public', 'feed.html'))
     }else{
-        console.log('atleast we did this much when not loggin')
         res.redirect('/signin')
     }
 }) 

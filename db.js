@@ -13,6 +13,10 @@ const Tweet = db.define('tweets', {
         autoIncrement: true,
         primaryKey: true
     },
+    fullname: { 
+        type:Sequelize.STRING,
+        allowNull:false
+    },
     author: {
         type: Sequelize.STRING,
         allowNull: false

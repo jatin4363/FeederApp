@@ -3,6 +3,7 @@ $(function () {
     let tweetlist = $('#tweet-list')
     fetchTweets(function (tweets) {
         tweetlist.empty()
+        console.log("TILL HERE")
         console.log(tweets)
         for (tweet of tweets) {
             // console.log(tweet)
@@ -11,17 +12,17 @@ $(function () {
     })
     // console.log("After fetch tweets ")
 
-    let auth = $('#author')
+    // let auth = $('#author')
     let cont = $('#content')
 
     $('#add-btn').click(() => {
         addTweet(
-            auth.val(),
+            // auth.val(),
             cont.val(),
             function () {
                 // window.alert(TweeteAdded + 'has been added to the db')
                 location.reload()
-                auth.val("")
+                // auth.val("")
                 cont.val("")
             }
         )
