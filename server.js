@@ -18,7 +18,6 @@ app.use(passport.session())
 
 app.use('/', require('./routes/root'))
 app.use('/', express.static(path.join(__dirname, 'public')))
-app.use('/feed' , require('./routes/private'))
 
 
 app.use('/content', require('./routes/content'))
