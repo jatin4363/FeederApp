@@ -33,7 +33,14 @@ route.post('/', (req, res) => {
 route.delete('/:id', (req, res) => {
     // console.log("We were right id : " + req.params.id)
     Tweet.destroy({
-        where: { id: req.params.id }
+        where: {
+            id: req.params.id,
+            author: req.user.username
+        }
+    }).then((response) => {
+        if (!response) {
+            res.send("NOOOOOOOOOOOOOOOOOO !")
+        }
     })
 })
 

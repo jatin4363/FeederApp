@@ -55,8 +55,14 @@ $(function () {
 
     $(document).on('click', '#remove-btn', (event) => {
         // console.log("btn clicked of id :" + $(event.target).parent().parent().attr('id'))
-        deleteTweet($(event.target).parent().parent().attr('id'), () => {
-            location.reload()
-        })
+        var result = confirm("Are you sure you want to delete this Tweet?");
+        if (result) {
+            deleteTweet($(event.target).parent().parent().attr('id'), (response) => {
+                console.log(response)
+                alert(response)
+                location.reload()
+            })
+        }
+
     })
 })
